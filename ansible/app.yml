@@ -1,0 +1,8 @@
+- name: Deploy java app
+  hosts: all
+
+  tasks:
+    - name: copy jar file
+      copy:
+        src: "{{ playbook_dir }}/../target/GarageManager-11.jar"
+        dest: "/home/mftiedu/ak_jar/GarageManager-11.jar"
