@@ -1,14 +1,29 @@
-plugins {
-    id 'java'
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "io.qameta.allure:allure-gradle:2.5"
+    }
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+apply plugin: 'java'
+apply plugin: 'io.qameta.allure'
 
 repositories {
     mavenCentral()
 }
 
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+allure {
+    autoconfigure = true
+    version = '2.8.1'
+
+    useJUnit4 {
+        version = '2.8.1'
+    }
+
+}
+
+test {
+    useJUnit()
 }
