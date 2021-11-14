@@ -199,6 +199,18 @@ public class GarageManagerTest {
         }
     }
 
+    @Test
+    public void removeCarTest(){
+        testGarage.addNewCar(ds, oleg);
+        testGarage.removeCar(3);
+        try {
+            testGarage.meanOwnersAgeOfCarBrand("Citroen");
+            fail("Didn't remove car");
+        } catch (GarageException e){
+            //
+        }
+    }
+
 
 
 }
