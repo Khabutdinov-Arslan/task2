@@ -1,2 +1,5 @@
-# task2
-For CI
+# dummy-java
+
+Dummy java app for CI
+
+upd1: test freestyle hook
