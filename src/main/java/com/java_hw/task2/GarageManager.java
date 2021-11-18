@@ -128,7 +128,7 @@ public class GarageManager implements Garage {
             carsByPower.add(car);
             return car;
         }
-        throw new NoCarException("No car with id " + String.valueOf(carId));
+        throw new NoCarException("No car with id " + carId);
     }
 
     /**
@@ -136,11 +136,11 @@ public class GarageManager implements Garage {
      */
     public void addNewCar(Car car, Owner owner) throws DuplicateCarException, NoOwnerException, IncorrectOwnerException {
         if (carById.containsKey(car.getCarId())){
-            throw new DuplicateCarException("Already has car with id " + String.valueOf(car.getCarId()));
+            throw new DuplicateCarException("Already has car with id " + car.getCarId());
         }
 
         if (car.getOwnerId() != owner.getId()){
-            throw new IncorrectOwnerException("Mismatch owner id for car " + String.valueOf(car.getCarId()));
+            throw new IncorrectOwnerException("Mismatch owner id for car " + car.getCarId());
         }
 
         carById.put(car.getCarId(), car);

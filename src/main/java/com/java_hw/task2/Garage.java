@@ -1,7 +1,6 @@
 package com.java_hw.task2;
 
 import java.util.Collection;
-import java.util.HashMap;
 
 public interface Garage {
 
